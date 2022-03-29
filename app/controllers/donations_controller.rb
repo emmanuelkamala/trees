@@ -19,7 +19,8 @@ class DonationsController < ApplicationController
     @donation = Donation.new(donation_params)
 
     if @donation.save
-      redirect_to donation_url(@donation), notice: "Donation was successfully created."
+      #redirect_to donation_url(@donation), notice: "Donation was successfully created."
+      redirect_to donations_path, notice: "Donation was successfuly created."
     else
       render :new, status: :unprocessable_entity 
     end
