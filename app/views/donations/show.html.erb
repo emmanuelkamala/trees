@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p style="color: green"><%= notice %></p>
 
-<%= render @donation %>
+  <%= render @donation %>
 
-<div>
-  <%= link_to "Edit this donation", edit_donation_path(@donation) %> |
-  <%= link_to "Back to donations", donations_path %>
+  <div>
+    <%= link_to "Edit this donation", edit_donation_path(@donation) %> |
+    <%= link_to "Back to donations", donations_path %>
 
-  <%= button_to "Destroy this donation", @donation, method: :delete %>
+    <%= button_to "Destroy this donation", @donation, method: :delete %>
+  </div>
 </div>
