@@ -3,3 +3,7 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "popper"
 import "bootstrap"
+import "@fortawesome/fontawesome-free/js/all"
+import "custom/main"
+
+

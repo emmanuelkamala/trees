@@ -1,5 +1,5 @@
 <%= form_with(model: donation) do |form| %>
-  <div class = "card col-md-6 mx-auto">
+  <div class = "card col-md-7 mx-auto">
     <div class = "card-body">
       <% if donation.errors.any? %>
         <div style="color: red">
@@ -18,11 +18,21 @@
         <%= form.text_field :name, { class: "form-control", placeholder: "Enter your full name" } %>
       </div>
 
-      <div class="mb-3">
-        <%= form.label :amount, { class: "form-label"} %>
-        <%= form.number_field :amount, { class: "form-control", placeholder: "Enter amount to donate, minimum is €25", min: 25 } %>
-      </div>
 
+      <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+        <%= form.radio_button :amount, 25, name: "options", class: "btn-check", :id=>"first", :style=>"visibility:hidden;" %>
+        <label for="first" class="btn btn-outline-success me-2"><span class="d-flex flex-direction-row align-items-center justify-content-center"><i class="fa fa-tree pe-1"></i>€25</span></label>
+
+        <%= form.radio_button :amount, 50, name: "options", class: "btn-check", :id=>"second", :style=>"display:none;" %>
+        <label for="second" class="btn btn-outline-success me-2"><span class="d-flex flex-direction-row align-items-center justify-content-center"><i class="fa fa-tree pe-1"></i>€50</span></label>
+
+        <%= form.radio_button :amount, 75, name: "options", class: "btn-check", :id=>"third", :style=>"display:none;" %>
+        <label for="third" class="btn btn-outline-success me-2"><span class="d-flex flex-direction-row align-items-center justify-content-center"><i class="fa fa-tree pe-1"></i>€75</span></label>
+      
+        <%= form.number_field :amount, { class: "form-control col-md-6", :id=>"fourth", placeholder: "Enter any amount above €25", min: 25 } %>
+        
+      </div>
+     
       <div class="mb-3">
         <%= form.label :email, { class: "form-label"} %>
         <%= form.text_field :email, { class: "form-control", placeholder: "Enter your email address" } %>
@@ -34,8 +44,11 @@
       </div>
 
       <div class="text-center d-grid gap-2 col-8 mx-auto">
-        <%= form.submit "Gift a Tree", class: "btn btn-success fs-4" %>
+
+        <div class="mt-4 d-flex justify-content-center align-items-center">
+          <%= form.submit "Mollie Pay", class: "btn btn-success fs-4 text-white" %>
+        </div>
       </div>
-    </div>
   </div>
 <% end %>
+

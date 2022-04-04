@@ -7,11 +7,11 @@
     <% @donations.each do |donation| %>
       <div class="card card-body col-md-3 mb-1">
         <div class="d-flex flex-row">
-          <i class="material-icons md-48 md-light" style="color: orange">face</i>
+          <i class="material-icons md-48 md-light" style="color: #66BB6A">face</i>
         
         <div class="ms-2">
           <%= donation.name %><br />
-          Donated <strong>$<%= donation.amount %></strong> | <small class="text-secondary"><%= time_ago_in_words(donation.created_at) %> ago</small>
+          Donated <strong>€<%= donation.amount %></strong> | <small class="text-secondary"><%= time_ago_in_words(donation.created_at) %> ago</small>
         </div>
         </div>
       </div>

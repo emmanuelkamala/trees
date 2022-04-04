@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Intros</h1>
+
+<div id="intros">
+  <% @intros.each do |intro| %>
+    <%= render intro %>
+    <p>
+      <%= link_to "Show this intro", intro %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New intro", new_intro_path %>
