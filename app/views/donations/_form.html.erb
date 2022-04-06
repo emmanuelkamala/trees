@@ -1,5 +1,5 @@
 <%= form_with(model: donation) do |form| %>
-  <div class = "col-9 mx-auto">
+  <div class="px-4 mx-auto">
    
       <% if donation.errors.any? %>
         <div style="color: red">
@@ -13,41 +13,49 @@
         </div>
       <% end %>
 
-      <div class="mb-3">
-        <%= form.label :name, { class: "form-label text-success fs-4"} %>
-        <%= form.text_field :name, { class: "form-control", placeholder: "Enter your full name" } %>
-      </div>
-
-
-      <div class="btn-group mb-3" role="group" aria-label="Basic radio toggle button group">
+      <label class="text-white">Select the amount you wish to donate:</label>
+      <div class="btn-group my-3" role="group" aria-label="Basic radio toggle button group">
         <%= form.radio_button :amount, 25, :style=>"display: none;" %>
-        <label for="second" class="btn btn-outline-success rounded me-2"><span class="d-flex flex-direction-row align-items-center justify-content-center fs-4"><i class="fa fa-tree pe-1"></i>€25</span></label>
+        <label for="second" class="btn btn-outline-success text-white rounded me-2">
+          <span class="d-flex flex-direction-row align-items-center justify-content-center fs-4">
+            <i class="fa fa-tree pe-1"></i>€25
+          </span>
+        </label>
 
 
         <%= form.radio_button :amount, 50, :style=>"display:none;" %>
-        <label for="second" class="btn btn-outline-success rounded me-2"><span class="d-flex flex-direction-row align-items-center justify-content-center fs-4"><i class="fa fa-tree pe-1"></i>€50</span></label>
+        <label for="second" class="btn btn-outline-success rounded me-2">
+          <span class="d-flex flex-direction-row align-items-center text-white justify-content-center fs-4">
+            <i class="fa fa-tree pe-1"></i>€50
+          </span>
+        </label>
 
         <%= form.radio_button :amount, 75, :style=>"display:none;" %>
-        <label for="third" class="btn btn-outline-success rounded me-2"><span class="d-flex flex-direction-row align-items-center justify-content-center fs-4"><i class="fa fa-tree pe-1"></i>€75</span></label>
+        <label for="third" class="btn btn-outline-success rounded me-2"><span class="d-flex text-white flex-direction-row align-items-center justify-content-center fs-4"><i class="fa fa-tree pe-1"></i>€75</span></label>        
       
-        <%= form.number_field :amount, { class: "form-control", :id=>"fourth", placeholder: "Min. amount is €25", min: 25 } %>
-        
+        <%= form.number_field :amount, { class: "form-control", :id=>"fourth", placeholder: "Custom: > €25", min: 25 } %>
+
+        </div> 
+
+      <div class="mb-3">
+        <%= form.label :name, { class: "form-label text-white fs-6"} %>
+        <%= form.text_field :name, { class: "form-control", placeholder: "Enter your full name" } %>
       </div>
      
       <div class="mb-3">
-        <%= form.label :email, { class: "form-label text-success fs-4"} %>
+        <%= form.label :email, { class: "form-label text-white fs-6"} %>
         <%= form.text_field :email, { class: "form-control", placeholder: "Enter your email address" } %>
       </div>
 
       <div class="mb-3">
-        <%= form.label :description, { class: "form-label text-success fs-4"} %>
+        <%= form.label :description, { class: "form-label text-white fs-6"} %>
         <%= form.text_area :description, { class: "form-control", placeholder: "Share with us any opinion or ideas about growing trees..." } %>
       </div>
 
       <div class="text-center d-grid gap-2 col-8 mx-auto">
 
         <div class="mt-4 d-flex justify-content-center align-items-center">
-          <%= form.submit "Mollie Pay", class: "btn btn-success fs-4 text-white" %>
+          <%= form.submit "Mollie Pay", class: "btn btn-outline-success fs-5 text-white" %>
         </div>
       </div>
 <% end %>
