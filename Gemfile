@@ -18,6 +18,8 @@ gem "bootstrap"
 gem "material_icons"
 gem "font-awesome-rails"
 gem 'mollie-api-ruby'
+gem "pay"
+gem "stripe"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
