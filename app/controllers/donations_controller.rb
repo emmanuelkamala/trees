@@ -23,12 +23,17 @@ class DonationsController < ApplicationController
     flash[:success] = "Thanks for your donation of #{ sprintf("%.2f", @donation.amount)} euro!"
     payment = Mollie::Payment.create(
       amount:       { value: sprintf("%.2f", @donation.amount), currency: 'EUR' },
-      description:  'Donation for the Greenmanjaro project',
-      redirect_url: "https://thestacklounge.co.uk/about",
-      webhook_url:  "https://thestacklounge.co.uk/donations/callback"
+      description:  'Donation for the Growing Trees Project',
+      redirect_url: "http://localhost:3000/school-projects",
+      webhook_url:  "https://greenmanjaro.com/donations/callback"
     )
-    donation.payments.create(amount: @donation.amount, donation_id: donation.id, identifier: payment.id)
-    redirect_to payment.checkout_url
+    @donation.save(amount: @donation.amount, 
+                   name: @donation.name, 
+                   email: @donation.email, 
+                   donation_id: @donation.id, 
+                   identifier: payment.id
+                  )
+    redirect_to payment.checkout_url, { allow_other_host: true }
   end
 
   def callback
