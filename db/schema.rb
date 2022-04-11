@@ -11,15 +11,13 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_04_11_082227) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "donations", force: :cascade do |t|
     t.string "name"
     t.integer "amount"
     t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "intros", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,8 +30,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_11_082227) do
     t.string "currency"
     t.integer "application_fee_amount"
     t.integer "amount_refunded"
-    t.json "metadata"
-    t.json "data"
+    t.jsonb "metadata"
+    t.jsonb "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id", "processor_id"], name: "index_pay_charges_on_customer_id_and_processor_id", unique: true
@@ -46,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_11_082227) do
     t.string "processor", null: false
     t.string "processor_id"
     t.boolean "default"
-    t.json "data"
+    t.jsonb "data"
     t.datetime "deleted_at", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -60,7 +58,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_11_082227) do
     t.string "processor", null: false
     t.string "processor_id"
     t.boolean "default"
-    t.json "data"
+    t.jsonb "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_type", "owner_id", "processor"], name: "index_pay_merchants_on_owner_type_and_owner_id_and_processor"
@@ -71,7 +69,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_11_082227) do
     t.string "processor_id", null: false
     t.boolean "default"
     t.string "type"
-    t.json "data"
+    t.jsonb "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id", "processor_id"], name: "index_pay_payment_methods_on_customer_id_and_processor_id", unique: true
@@ -87,8 +85,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_11_082227) do
     t.datetime "trial_ends_at", precision: nil
     t.datetime "ends_at", precision: nil
     t.decimal "application_fee_percent", precision: 8, scale: 2
-    t.json "metadata"
-    t.json "data"
+    t.jsonb "metadata"
+    t.jsonb "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id", "processor_id"], name: "index_pay_subscriptions_on_customer_id_and_processor_id", unique: true
@@ -97,7 +95,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_11_082227) do
   create_table "pay_webhooks", force: :cascade do |t|
     t.string "processor"
     t.string "event_type"
-    t.json "event"
+    t.jsonb "event"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
