@@ -8,14 +8,58 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag 'https://checkout.stripe.com/checkout.js' %>
+    <script src="https://kit.fontawesome.com/dde8393fa7.js" crossorigin="anonymous" data-mutate-approach="sync"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200&display=swap');
+    </style>
   </head>
 
   <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="./app/javascript/custom/main.js"></script>
+    
     <main class="mx-auto">
       <%= render 'layouts/header' %>
       <%= yield %>
       <%= render 'layouts/footer' %>
     </main>
-
+    <div class="container-fluid">
+      <div class="row px-5" style="background-color: #000;">
+      <div class='col-md-3 py-4'>
+        <img src="footer_logo.png" src='' width="236px" height="136px" />
+      </div>
+      <div class='col-md-3'>
+        <p class="fs-4 text-white py-4">PROJECTS</p>
+        <a href="#" class="text-white text-decoration-none">Plastic to Plastic</a><br />
+        <a href="#" class="text-white text-decoration-none">Happy Green Tanzania</a><br />
+        <a href="#" class="text-white text-decoration-none">Adopt a Village</a><br />
+        <a href="#" class="text-white text-decoration-none">Save the Parents</a><br />
+        <a href="#" class="text-white text-decoration-none">Tree Of Life</a><br />
+        <a href="#" class="text-white text-decoration-none">Act Now Donate</a><br />
+      </div>
+      <div class='col-md-3'>
+        <p class="fs-4 text-white py-4">FOUNDATION</p>
+        <a href="#" class="text-white text-decoration-none">Why</a><br />
+        <a href="#" class="text-white text-decoration-none">What</a><br />
+        <a href="#" class="text-white text-decoration-none">Who</a><br />
+        <a href="#" class="text-white text-decoration-none">Contact</a><br />
+        <a href="#" class="text-white text-decoration-none">Partners</a><br />
+        <a href="#" class="text-white text-decoration-none">News</a><br />
+      </div>
+      <div class='col-md-3'>
+        <p class="fs-4 text-white py-4">CONTACT</p>
+        <p class="text-white">Greenmanjaro Foundation<br />
+          Bloemendaalseweg 96<br/>
+          2061 CN Bloemendaal<br />
+          The Netherlands</p>
+          <p class="text-white">info@greenmanjaro.com</p>
+          <p class="text-white">ANBI – Jan 2019<br />
+          KVK Amsterdam 66282837<br />
+          Annual Report 2020<br />
+          Terms of Use<br />
+          Privacy statement<br /></p>
+      </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,24 +1,54 @@
 <div class="row">
-  <div class="col-sm-6" style="background-image: url(/school.jpg); background-size: cover; min-height: 100vh; background-position: center;">
+  <div class="col-md-6">
+      <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+      <a href="#">Home</a>
+
+        <div class="carousel-item active">
+          <img src="rau1.jpg" alt="" class="d-block w-100 h-100" />
+        </div>
+        <div class="carousel-item">
+        <img src="rau2.jpg" alt="" class="d-block w-100 h-100" />
+        </div>
+        <div class="carousel-item">
+        <img src="rau3.jpg" alt="" class="d-block w-100 h-100" />
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </div>
-  <div class="col-sm-6" style="background-color: #9ACD32;">
+  <div class="col-md-6" style="background-color: #9ACD32;">
   
   <div class="px-3 pt-5" style="color: #800080;">
-    <h1 class="text-center">Reforestation Rau Forest</h1>
-    <div class="mx-auto col-sm-10 pt-4 fs-5 text-white">
-      <p>With its location directly adjacent to the medium-sized city of Moshi in the Kilimanjaro region, Rau Forest is 
-      an urban forest. Over the years, large-scale deforestation has taken place in this unique spot, mainly to provide for firewood. 
-      The forest is now completely fenced, so cutting trees is no longer possible. With the funding from Greenmanjaro, the youth of 
-      Roots & Shoots was able to set up a nursery next to the Rau Forest, beginning 2022. 
-      
-      </p><p>In this nursery various, indigenous species 
-      will be raised. For 2022, the planting of 60,000 trees is scheduled. 
-      Money is needed to further expand the reforestation of Rau Forest and to continue it in the coming years. Donate now for more 
-      forest in Rau Forest.
-      </p>
+    <h1 class="text-center text-white">Reforestation Rau Forest</h1>
+    <div class="mx-auto col-sm-10 pt-4 fs-4 text-white">
+      <p>With its location directly adjacent to the city of Moshi in the Kilimanjaro region, Rau Forest is an urban forest. 
+      Over the years, large-scale deforestation has taken place in this unique spot, mainly to provide for firewood. 
+      The forest is now completely fenced to avoid trees cutting trees. With the support of Greenmanjaro, Roots & Shoots youth 
+      set up a nursery next to the Rau Forest, since the beginning of 2022. </p>
+      <p>In this nursery various, indigenous species will be raised. For 2022, the planting of 60,000 trees is scheduled. 
+      Support is needed to further expand and continue the reforestation of Rau Forest.</p>
+    
     </div>
-    <div class="text-center py-5 fs-4"><%= button_to "Donate", new_donation_path, method: :get, class: "btn btn-warning fs-4 text-white" %></div>
+    <div class="text-center py-5 fs-4">
+      <%= button_to raw("<i class=\"fas fa-hand-holding-heart\"> Donate Now</i>"), 
+          new_donation_path, method: :get,  
+          class: "btn btn-success fs-4 text-white" %>
+    </div>
 
+    
   </div>
   </div>
 </div>

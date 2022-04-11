@@ -21,10 +21,11 @@
             <i class="fa fa-tree pe-1"></i>€25
           </span>
         </label>
+        
 
 
         <%= form.radio_button :amount, 50, :style=>"display:none;" %>
-        <label for="second" class="btn btn-outline-success rounded me-2">
+        <label for="second" class="btn btn-outline-success rounded me-2" id="twenty-five" onclick="getValue()">
           <span class="d-flex flex-direction-row align-items-center text-white justify-content-center fs-4">
             <i class="fa fa-tree pe-1"></i>€50
           </span>
@@ -37,6 +38,10 @@
 
         </div> 
 
+        <div class="mb-2">
+        <span class="thank" style="display: none;" id="show"></span>
+        </div>
+
       <div class="mb-3">
         <%= form.label :name, { class: "form-label text-white fs-6"} %>
         <%= form.text_field :name, { class: "form-control", placeholder: "Enter your full name" } %>
@@ -47,16 +52,18 @@
         <%= form.text_field :email, { class: "form-control", placeholder: "Enter your email address" } %>
       </div>
 
-      <div class="mb-3">
-        <%= form.label :description, { class: "form-label text-white fs-6"} %>
-        <%= form.text_area :description, { class: "form-control", placeholder: "Share with us any opinion or ideas about growing trees..." } %>
-      </div>
-
       <div class="text-center d-grid gap-2 col-8 mx-auto">
-
         <div class="mt-4 d-flex justify-content-center align-items-center">
-          <%= form.submit "Donate", class: "btn btn-outline-success fs-5 text-white" %>
+          <%= form.submit "DONATE NOW", class: "btn btn-success fs-5" %>
         </div>
       </div>
 <% end %>
+
+<script>
+  getValue = () => {
+    let x = document.getElementById('twenty-five').value;
+    alert(x)
+  }
+  
+</script>
 

@@ -69,6 +69,6 @@ class DonationsController < ApplicationController
 
     def donation_params
       #binding.pry
-      params.require(:donation).permit(:name, :amount, :email, :description)
+      params.require(:donation).permit(:name, :amount, :email)
     end
 end

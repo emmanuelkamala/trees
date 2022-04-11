@@ -1,20 +1,51 @@
 <div class="row">
-  <div class="col-sm-6" style="background-image: url(/village-project.jpg); background-size: cover; min-height: 100vh; background-position: center;">
+  <div class="col-md-6">
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="villageplanting.png" alt="" />
+    </div>
+    <div class="carousel-item">
+    <img src="village-planting.jpg" alt="" /> 
+    </div>
+    <div class="carousel-item">
+    <img src="village-project.jpg" alt="" />
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  
   </div>
 
-  <div class="col-sm-6" style="background-color: #FFA500;">
-  <div class="px-3 pt-5" style="color: #006400;">
+  <div class="col-md-6" style="background-color: orange;">
+  <div class="px-3 pt-5" style="color: #fff;">
     <h1 class="text-center">Village Projects in Lower Moshi</h1>
-    <div class="mx-auto col-sm-10 pt-4 fs-5 text-white">
-      <p>In Lower Moshi, living conditions are very difficult. Deforestation has led to sandy plains, during the rainy season there 
-      are floods, no trees and roots to hold the water and during the long dry season people have to walk large distances to find water. 
-      Around the hut it is barren, no place to shelter from the sun. For families it is a daily struggle to find enough food.</p>
+    <div class="mx-auto col-sm-10 pt-4 fs-4">
+      <p>In Lower Moshi, living conditions are very difficult. Deforestation led to sandy plains. The lack of trees and roots to 
+      hold the water, leads to flooding during the rainy season. Also, during the long dry season people have to walk large 
+      distances to find water. Around the hut it is barren, no place to shelter from the sun. </p><p>
 
-      <p>Spring 2022, Greenmanjaro funded the planting of trees for the village people of Londoto and Mawala. Almost 2000 trees, 
-      shade as well as fruit trees are planted. The people of Kiruani, Miweleni and Mikocheni are very much looking forward to start 
-      planting trees in their villages, please help them and donate.</p>
+      Since spring 2022, Greenmanjaro supports the planting of trees for the village people of Londoto and Mawala. Almost 2000 trees, shade as well as fruit trees were planted. 
+      Other villages like Kiruani, Miweleni and Mikocheni are also looking forward to start planting trees in their villages. Please support them and donate.
+      </p>
     </div>
-    <div class="text-center py-5 fs-4"><%= button_to "Donate", new_donation_path, method: :get, class: "btn btn-success fs-4 text-white" %></div>
+    <div class="text-center py-5 fs-4">
+    <%= button_to raw("<i class=\"fas fa-hand-holding-heart\"> Donate Now</i>"), 
+        new_donation_path, method: :get,  
+        class: "btn btn-success fs-4 text-white" %>    
+    </div>
 
   </div>
   
