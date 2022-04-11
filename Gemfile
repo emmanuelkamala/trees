@@ -16,7 +16,7 @@ gem "sprockets-rails"
 gem "puma", "~> 5.0"
 gem "bootstrap"
 gem "material_icons"
-gem "font-awesome-rails"
+gem "font-awesome-rails" 
 gem 'mollie-api-ruby'
 gem "pay"
 gem "stripe"
